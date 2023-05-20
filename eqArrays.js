@@ -20,5 +20,5 @@ const eqArrays = function(arr1, arr2) {
 };
 
 const arr = [1, 2, 3];
-const array = [1, 2, 3];
-assertEqual(eqArrays(arr, array), true);
+const array = [1, 2, 3, 7];
+assertEqual(eqArrays(arr, array), false);
