@@ -19,6 +19,7 @@ const countLetters = function(str) {
   }
   return result;
 };
-const nameOne = "Oluwatobi";
+const nameOne = countLetters("oluwatobi");
+console.log(nameOne);
 
-assertEqual(countLetters(nameOne), 2);
+assertEqual(nameOne, 2);
