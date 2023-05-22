@@ -43,3 +43,13 @@ const letterPositions = function(sentence) {
 
 //Test case
 const result = letterPositions("lighthouse in the house");
+console.log(result);
+const testCase1 = letterPositions("happy haapy home").a;
+const testCase2 = letterPositions("anime name is naruto shipuddeen")['e'];
+console.log(testCase2);
+
+assertArraysEqual(letterPositions("hello").e, [1]);
+assertArraysEqual(testCase1, [1, 7, 8]);
+assertArraysEqual(testCase2, [4, 9, 28, 29]);
+
+
