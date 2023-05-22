@@ -21,5 +21,8 @@ const countLetters = function(str) {
 };
 const nameOne = countLetters("oluwatobi");
 console.log(nameOne);
+const example = countLetters("lighthouse in the house");
+console.log(example);
 
 assertEqual(nameOne['o'], 2);
+assertEqual(example.h, 4);
