@@ -30,7 +30,7 @@ const val = 'sportage';
 console.log(findKeyByValue(myObj, val));
 
 const bestTVShowsByGenre = {
-  sci_fi: "The Expanse",
+  sciFi: "The Expanse",
   comedy: "Brooklyn Nine-Nine",
   drama: "The Wire"
 };
