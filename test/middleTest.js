@@ -1,19 +1,29 @@
-const eqArrays = require("../eqArrays");
-const assertArraysEqual = require("../assertArraysEqual");
+const assert = require("chai").assert;
 const middle = require("../middle");
 
+describe("#middle", () => {
+  it("should return [\"world\"] for [\"hello\", \"world\", \"lighthouse\"]", () => {
+    assert.deepEqual(middle(["hello", "world", "lighthouse"]), ["world"]);
+  });
 
-const words = ["hello", "world", "lighthouse"];
-const numbers1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
-const num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-const numName = [1, 2, 3, 4, "grace", "Bello", 5, 6, 7, 8, 10, 11];
+  it("should return [6] for [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]", () => {
+    assert.deepEqual(middle([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]), [6]);
+  });
 
-assertArraysEqual(middle(words), ["world"]);
-assertArraysEqual(middle(numbers1), [6]);
-assertArraysEqual(middle(num), [5, 6]);
-assertArraysEqual(middle(numName), ["Bello", 5]);
+  it("should return [5, 6] for [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]", () => {
+    assert.deepEqual(middle([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), [5, 6]);
+  });
 
-assertArraysEqual(middle([1, 2, 3]), [2]);
-assertArraysEqual(middle([1, 2, 3, 4, 5]), [3]);
-assertArraysEqual(middle([1, 2, 3, 4]), [2, 3]);
-assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]);
+  it("should return [5, 6] for [1, 2, 3, 4, \"grace\", \"Bello\", 5, 6, 7, 8, 10, 11]", () => {
+    assert.deepEqual(middle([1, 2, 3, 4, "grace", "Bello", 5, 6, 7, 8, 10, 11]), ["Bello", 5]);
+  });
+
+  it("should return [2] for [1, 2, 3]", () => {
+    assert.deepEqual(middle([1, 2, 3]), [2]);
+  });
+
+  it("should return [3] for [1, 2, 3, 4, 5]", () => {
+    assert.deepEqual(middle([1, 2, 3, 4, 5]), [3]);
+  });
+
+});
