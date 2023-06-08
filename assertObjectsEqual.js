@@ -1,49 +1,7 @@
-const eqArrays = function(arr1, arr2) {
-  if (arr1.length !== arr2.length) {
-    return false;
-  }
+//Importing the needed modules
+const eqObjects = require("./eqObjects");
 
-  for (let i = 0; i < arr1.length; i++) {
-    if (arr1[i] !== arr2[i]) {
-      return false;
-    }
-  }
-  return true;
-};
-
-const assertEqual = function(actual, expected) {
-  if (actual !== expected) {
-    console.log(`😡😡😡 Assertion failed: ${actual} !== ${expected}`);
-  } else {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  }
-};
-
-// returns true if both objects have identical keys with identical values
-// otherwise you get back a big fat false!
-const eqObjects = function(object1, object2) {
-  let result = true;
-  const arr1 = Object.keys(object1);
-  const arr2 = Object.keys(object2);
-
-
-  if (arr1.length === arr2.length) {
-    for (const elements of arr1) {
-      if (Array.isArray(object1[elements]) || Array.isArray(object2[elements])) {
-        result = eqArrays(object1[elements], object2[elements]);
-      } else if (object1[elements] !== object2[elements]) {
-        return false;
-      }
-    }
-
-  } else {
-    return false;
-  }
-
-  return result;
-
-};
-
+// Function Implementation
 const assertObjectsEqual = function(actual, expected) {
   const inspect = require('util').inspect;
   if (eqObjects(actual, expected)) {
@@ -53,7 +11,4 @@ const assertObjectsEqual = function(actual, expected) {
   }
 };
 
-const multiColorShirtObject = { colors: ["red", "blue"], size: "medium" };
-const anotherMultiColorShirtObject = { size: "medium", colors: ["red", "blue"] };
-
-assertObjectsEqual(multiColorShirtObject, anotherMultiColorShirtObject);
+module.exports = assertObjectsEqual;

@@ -1,7 +1,7 @@
+//importing assertArraysEqual and the eqArrays function
 const assertArraysEqual = require('../assertArraysEqual');
-const eqArrays = require("../eqArrays");
 
-
+//Test cases
 const arr = [1, 2, 3, 9];
 const array = [1, 2, 3, 7];
 assertArraysEqual(arr, array);

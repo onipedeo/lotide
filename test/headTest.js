@@ -1,6 +1,8 @@
+//Importing the needed modules(Chai and Head)
 const assert = require('chai').assert;
 const head = require('../head');
 
+//Test code
 describe('#head', () => {
   it("returns 1 for [1,2,3]", () => {
     assert.strictEqual(head([1, 2, 3]), 1);

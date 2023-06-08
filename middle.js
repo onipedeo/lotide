@@ -1,6 +1,4 @@
-const eqArrays = require("./eqArrays");
-const assertArraysEqual = require("./assertArraysEqual");
-
+//function implementation
 const middle = (array) => {
   let middleElement = [];
 
@@ -15,4 +13,3 @@ const middle = (array) => {
 };
 
 module.exports = middle;
-

@@ -1,6 +1,8 @@
+//importing the needed modules(chai and middle)
 const assert = require("chai").assert;
 const middle = require("../middle");
 
+//Test Code
 describe("#middle", () => {
   it("should return [\"world\"] for [\"hello\", \"world\", \"lighthouse\"]", () => {
     assert.deepEqual(middle(["hello", "world", "lighthouse"]), ["world"]);
