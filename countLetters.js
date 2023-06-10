@@ -1,16 +1,9 @@
+//import needed module
+const assertEqual = require("./assertEqual");
 // FUNCTION IMPLEMENTATION
-const assertEqual = function(actual, expected) {
-  if (actual !== expected) {
-    console.log(`😡😡😡 Assertion failed: ${actual} !== ${expected}`);
-  } else {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  }
-};
-
 const countLetters = function(str) {
   let result = {};
   for (const letters of str) {
-    console.log(letters);
     if (result[letters]) {
       result[letters] += 1;
     } else {
@@ -26,3 +19,5 @@ console.log(example);
 
 assertEqual(nameOne['o'], 2);
 assertEqual(example.h, 4);
+
+module.exports = countLetters;
