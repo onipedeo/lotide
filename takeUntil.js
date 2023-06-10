@@ -1,25 +1,7 @@
+//imporating needed module
+const assertArraysEqual = require("./assertArraysEqual");
+
 // FUNCTION IMPLEMENTATION
-const eqArrays = function(arr1, arr2) {
-  if (arr1.length !== arr2.length) {
-    return false;
-  }
-
-  for (let i = 0; i < arr1.length; i++) {
-    if (arr1[i] !== arr2[i]) {
-      return false;
-    }
-  }
-  return true;
-};
-
-const assertArraysEqual = function(arr3, arr4) {
-  if (eqArrays(arr3, arr4)) {
-    console.log(`The two arrays are the same: ${arr3} === ${arr4}.`);
-  } else {
-    console.log(`The two arrays are not the same: ${arr3} !== ${arr4}.`);
-  }
-};
-
 const takeUntil = function(array, callBack) {
   const result = [];
   for (const item of array) {
@@ -43,3 +25,5 @@ const data2 = ["I've", "been", "to", "Hollywood", ",", "I've", "been", "to", "Re
 const results2 = takeUntil(data2, x => x === ',');
 console.log(results2);
 assertArraysEqual(results2, ["I've", 'been', 'to', 'Hollywood']);
+
+module.exports = takeUntil;
