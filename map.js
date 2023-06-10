@@ -1,24 +1,7 @@
-const eqArrays = function(arr1, arr2) {
-  if (arr1.length !== arr2.length) {
-    return false;
-  }
+//import needed module
+const assertArraysEqual = require("./assertArraysEqual");
 
-  for (let i = 0; i < arr1.length; i++) {
-    if (arr1[i] !== arr2[i]) {
-      return false;
-    }
-  }
-  return true;
-};
-
-const assertArraysEqual = function(arr3, arr4) {
-  if (eqArrays(arr3, arr4)) {
-    console.log(`The two arrays are the same: ${arr3} === ${arr4}.`);
-  } else {
-    console.log(`The two arrays are not the same: ${arr3} !== ${arr4}.`);
-  }
-};
-
+//Function implementation
 const map = function(array, callback) {
   const results = []; //initiatlising the output array
 
@@ -52,3 +35,5 @@ const games = ['fifa 2023', 'GOW', 'MK11', 'Ratchet and Clank'];
 const result3 = map(games, (game) => `${game}eylay`);
 
 assertArraysEqual(result3, ['fifa 2023eylay', 'GOWeylay', 'MK11eylay', 'Ratchet and Clankeylay']);
+
+module.exports = map;
