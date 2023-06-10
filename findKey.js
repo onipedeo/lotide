@@ -1,12 +1,7 @@
-// FUNCTION IMPLEMENTATION
-const assertEqual = function(actual, expected) {
-  if (actual !== expected) {
-    console.log(`😡😡😡 Assertion failed: ${actual} !== ${expected}`);
-  } else {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  }
-};
+//importing the needed module
+const assertEqual = require("./assertEqual");
 
+//Function implementation
 const findKey = function(object, callBack) {
   if (Object.keys(object).length === 0) {
     return undefined;
@@ -32,3 +27,5 @@ const result2 = (findKey({}, x => x.stars === 2));
 
 assertEqual(result1, 'noma');
 assertEqual(result2, undefined);
+
+module.exports = findKey;
